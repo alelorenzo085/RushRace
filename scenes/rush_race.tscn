@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dpmx6ybir4icn"]
+
+[ext_resource type="Script" uid="uid://ce84pse03ev1h" path="res://scripts/rush_race.gd" id="1_yex7l"]
+[ext_resource type="PackedScene" uid="uid://kiyjrceytkl8" path="res://highway/road.tscn" id="2_ri7cs"]
+[ext_resource type="PackedScene" uid="uid://4u30mwtkpe6r" path="res://mainCar/car.tscn" id="3_g47rf"]
+
+[node name="RushRace" type="Node2D" unique_id=1185876185]
+y_sort_enabled = true
+script = ExtResource("1_yex7l")
+
+[node name="Road" parent="." unique_id=908957596 instance=ExtResource("2_ri7cs")]
+position = Vector2(829, 108)
+
+[node name="Car" parent="." unique_id=1520218268 instance=ExtResource("3_g47rf")]
+position = Vector2(0, 240)
+scale = Vector2(3, 3)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=254078118]
+volume_db = -5.0
+
+[node name="Timer" type="Timer" parent="." unique_id=1910458003]
+autostart = true

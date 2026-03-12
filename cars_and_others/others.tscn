@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://rbfdr6irjebq"]
+
+[ext_resource type="Script" uid="uid://dmlmppihk32l1" path="res://scripts/others.gd" id="1_tg4jq"]
+
+[node name="Others" type="Area2D" unique_id=802853655]
+script = ExtResource("1_tg4jq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1262379845]
+texture_filter = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1706573356]
+position = Vector2(0, 12)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1926377638]

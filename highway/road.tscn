@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://kiyjrceytkl8"]
+
+[ext_resource type="Texture2D" uid="uid://c5fehyyndli4k" path="res://resources/road/back.png" id="1_qeuao"]
+[ext_resource type="Texture2D" uid="uid://q6mrcdmg7dbl" path="res://resources/road/sun.png" id="2_88gfp"]
+[ext_resource type="Texture2D" uid="uid://dm7modu6vlog8" path="res://resources/road/buildings.png" id="3_jb5dv"]
+[ext_resource type="Texture2D" uid="uid://c2opstrh4n2nm" path="res://resources/road/palms.png" id="4_tc46y"]
+[ext_resource type="Texture2D" uid="uid://8i8kkcicf0vh" path="res://resources/road/highway.png" id="5_d8rfa"]
+[ext_resource type="Texture2D" uid="uid://bohp2kb7urh51" path="res://resources/road/palm-tree.png" id="6_owqah"]
+
+[node name="Road" type="Node2D" unique_id=908957596]
+position = Vector2(669, 124)
+
+[node name="BG" type="Parallax2D" parent="." unique_id=1773315574]
+texture_filter = 1
+scroll_scale = Vector2(0.05, 1)
+repeat_size = Vector2(224, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BG" unique_id=1503168441]
+texture_repeat = 2
+texture = ExtResource("1_qeuao")
+region_enabled = true
+region_rect = Rect2(0, 0, 1334, 240)
+
+[node name="Sun" type="Parallax2D" parent="." unique_id=180522258]
+autoscroll = Vector2(10, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sun" unique_id=2002897788]
+position = Vector2(1000, 0)
+texture = ExtResource("2_88gfp")
+
+[node name="Buildings" type="Parallax2D" parent="." unique_id=1105238181]
+scroll_scale = Vector2(0.075, 1)
+repeat_size = Vector2(256, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Buildings" unique_id=1915975510]
+texture_repeat = 2
+position = Vector2(-340, -116)
+texture = ExtResource("3_jb5dv")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1280, 240)
+
+[node name="Palms" type="Parallax2D" parent="." unique_id=244448587]
+scroll_scale = Vector2(0.25, 1)
+repeat_size = Vector2(224, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Palms" unique_id=584290383]
+texture_repeat = 2
+texture = ExtResource("4_tc46y")
+region_enabled = true
+region_rect = Rect2(0, 0, 1344, 240)
+
+[node name="Highway" type="Parallax2D" parent="." unique_id=718904687]
+repeat_size = Vector2(896, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Highway" unique_id=1508153486]
+texture_repeat = 2
+position = Vector2(226, 55)
+texture = ExtResource("5_d8rfa")
+region_enabled = true
+region_rect = Rect2(0, 0, 1792, 333)
+
+[node name="PalmTree" type="Parallax2D" parent="." unique_id=590960722]
+scroll_scale = Vector2(1.5, 1)
+repeat_size = Vector2(2000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="PalmTree" unique_id=1853640318]
+position = Vector2(-340, 159)
+texture = ExtResource("6_owqah")
+region_enabled = true
+region_rect = Rect2(0, 0, 665, 208)

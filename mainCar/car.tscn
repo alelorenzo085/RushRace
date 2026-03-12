@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://4u30mwtkpe6r"]
+
+[ext_resource type="Script" uid="uid://bgjh2envye4rg" path="res://scripts/car.gd" id="1_7822p"]
+[ext_resource type="Texture2D" uid="uid://bjoy60cjx0m4j" path="res://resources/car/car-running2.png" id="2_n2jd5"]
+[ext_resource type="Texture2D" uid="uid://b0hqb665quxqc" path="res://resources/car/car-running3.png" id="3_nqkpy"]
+[ext_resource type="Texture2D" uid="uid://cb3m66jyc80m4" path="res://resources/car/car-running4.png" id="4_424v8"]
+[ext_resource type="Texture2D" uid="uid://dbfhrcanuv27m" path="res://resources/car/car-running5.png" id="5_tslhi"]
+[ext_resource type="Texture2D" uid="uid://d56m3jhbmn8k" path="res://resources/car/car-running1.png" id="6_8sn6u"]
+[ext_resource type="AudioStream" uid="uid://c1sc1ac3ijbyw" path="res://resources/car/loop_5.wav" id="7_nqkpy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_epnxf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_n2jd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nqkpy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_424v8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tslhi")
+}],
+"loop": true,
+"name": &"act",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_8sn6u")
+}],
+"loop": true,
+"name": &"stop",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1nitd"]
+size = Vector2(33, 3)
+
+[node name="Car" type="CharacterBody2D" unique_id=1520218268]
+script = ExtResource("1_7822p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=315496891]
+texture_filter = 1
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_epnxf")
+animation = &"act"
+autoplay = "stop"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1058169046]
+position = Vector2(0.49999976, 5.5)
+shape = SubResource("RectangleShape2D_1nitd")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=207750853]
+position = Vector2(73, 0)
+zoom = Vector2(2, 2)
+limit_left = -10000001
+limit_top = 60
+limit_right = 9999999
+limit_bottom = 254
+
+[node name="CarSound" type="AudioStreamPlayer" parent="." unique_id=646545893]
+stream = ExtResource("7_nqkpy")
