@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bbx4xdu2nd7lx"]
+
+[ext_resource type="Script" uid="uid://b5s2csgg14137" path="res://2D/rush-race/obstacle/obstacle.gd" id="1_477n8"]
+
+[node name="Obstacle" type="Area2D" unique_id=183943198]
+script = ExtResource("1_477n8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=924883321]
+texture_filter = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1730409250]
+position = Vector2(0, 12)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=887506338]

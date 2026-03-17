@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bu4bxua3utvfl"
+path="res://.godot/imported/DavidKBD - Pink Bloom Pack - 05 - Western Cyberhorse.ogg-8aa7d65cc6218bf816e74488afadb9b4.oggvorbisstr"
+
+[deps]
+
+source_file="res://2D/rush-race/resources/music/DavidKBD - Pink Bloom Pack - 05 - Western Cyberhorse.ogg"
+dest_files=["res://.godot/imported/DavidKBD - Pink Bloom Pack - 05 - Western Cyberhorse.ogg-8aa7d65cc6218bf816e74488afadb9b4.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

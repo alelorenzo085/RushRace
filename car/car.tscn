@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://clrrv1j7ufouw"]
+
+[ext_resource type="Script" uid="uid://bwcp3ua8m6iy4" path="res://2D/rush-race/car/car.gd" id="1_l5d8c"]
+[ext_resource type="Texture2D" uid="uid://d56m3jhbmn8k" path="res://2D/rush-race/resources/car/car-running1.png" id="2_ro11v"]
+[ext_resource type="Texture2D" uid="uid://bjoy60cjx0m4j" path="res://2D/rush-race/resources/car/car-running2.png" id="3_sm3gb"]
+[ext_resource type="Texture2D" uid="uid://b0hqb665quxqc" path="res://2D/rush-race/resources/car/car-running3.png" id="4_c8n8x"]
+[ext_resource type="Texture2D" uid="uid://cb3m66jyc80m4" path="res://2D/rush-race/resources/car/car-running4.png" id="5_2pva0"]
+[ext_resource type="Texture2D" uid="uid://dbfhrcanuv27m" path="res://2D/rush-race/resources/car/car-running5.png" id="6_oq4em"]
+[ext_resource type="AudioStream" uid="uid://c1sc1ac3ijbyw" path="res://2D/rush-race/resources/car/loop_5.wav" id="7_sm3gb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_23f8g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_sm3gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c8n8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2pva0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_oq4em")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ro11v")
+}],
+"loop": true,
+"name": &"stop",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5d8c"]
+size = Vector2(34, 3)
+
+[node name="Car" type="CharacterBody2D" unique_id=1813876248]
+scale = Vector2(3, 3)
+script = ExtResource("1_l5d8c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=233026861]
+texture_filter = 1
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_23f8g")
+animation = &"run"
+autoplay = "stop"
+speed_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1935216048]
+position = Vector2(0.333333, 5.33333)
+shape = SubResource("RectangleShape2D_l5d8c")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1953449134]
+position = Vector2(73, 0)
+zoom = Vector2(2, 2)
+limit_top = 37
+limit_bottom = 286
+
+[node name="EngineSound" type="AudioStreamPlayer" parent="." unique_id=702142055]
+stream = ExtResource("7_sm3gb")

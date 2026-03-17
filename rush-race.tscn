@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ksv25y1xujps"]
+
+[ext_resource type="Script" uid="uid://obehfxihwbdt" path="res://2D/rush-race/rush-race.gd" id="1_yo54r"]
+[ext_resource type="PackedScene" uid="uid://bnfxevlm2ups0" path="res://2D/rush-race/road/road.tscn" id="2_kb63l"]
+[ext_resource type="PackedScene" uid="uid://clrrv1j7ufouw" path="res://2D/rush-race/car/car.tscn" id="3_pa47c"]
+
+[node name="SideRacing" type="Node2D" unique_id=1906890297]
+y_sort_enabled = true
+script = ExtResource("1_yo54r")
+
+[node name="Road" parent="." unique_id=1295319331 instance=ExtResource("2_kb63l")]
+position = Vector2(258, 0)
+
+[node name="Car" parent="." unique_id=1608261864 instance=ExtResource("3_pa47c")]
+position = Vector2(0, 240)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=809301073]
+volume_db = -5.0
+
+[node name="Timer" type="Timer" parent="." unique_id=323539972]
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=437060140]
+
+[node name="Score" type="Label" parent="CanvasLayer" unique_id=1842444887]
+offset_right = 125.0
+offset_bottom = 23.0
+text = "Score: 0"
