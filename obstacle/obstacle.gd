@@ -1,5 +1,8 @@
 extends Area2D
 
+# Signal emitted when the obstacle collides with the player car.
+signal hit_player
+
 # The array of different obstacle car sprites.
 var sprites := [
 	preload("res://2D/rush-race/resources/obstacles/ambulance.png"),
@@ -50,16 +53,18 @@ func _ready() -> void:
 	speed = randi_range(min_speed, max_speed)
 	
 	# Sets the screen exited signal of the screen visibility notifier to remove
-	# the obstacle car when it exites the screen.
+	# the obstacle car when it exits the screen.
 	_visible_on_screen_notifier_2d.screen_exited.connect(func() -> void:
 		queue_free()
 	)
-	
-# Handles the obstacle car movement and collisions.
-func _physics_process(delta: float) -> void:
-	position.x += speed * delta
 
-	# When the obstacle car collides with the player car sets its speed to zero.
+	# When the obstacle car collides with the player car, stops it and signals game over.
+	# Connected once in _ready to avoid duplicate connections each frame.
 	body_entered.connect(func(body: Node2D) -> void:
 		body.velocity = Vector2.ZERO
+		emit_signal("hit_player")
 	)
+
+# Handles the obstacle car movement.
+func _physics_process(delta: float) -> void:
+	position.x += speed * delta
