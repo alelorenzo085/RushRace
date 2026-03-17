@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://win_scene_rush"]
+
+[ext_resource type="Texture2D" uid="uid://dmrfxk5mwp7av" path="res://2D/rush-race/menus/chill-4k-electronic-art-928joa3912fm2jl6.jpg" id="1_41s1p"]
+[ext_resource type="Script" uid="uid://win_script_rush" path="res://2D/rush-race/menus/win.gd" id="1_win"]
+
+[node name="Win" type="Control" unique_id=1111111111]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_win")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2222222222]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer" unique_id=3333333333]
+layout_mode = 2
+texture = ExtResource("1_41s1p")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=4444444444]
+layout_mode = 2
+
+[node name="WinLbl" type="Label" parent="CenterContainer/VBoxContainer" unique_id=5555555555]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "YOU WIN!"
+horizontal_alignment = 1
+
+[node name="ScoreLbl" type="Label" parent="CenterContainer/VBoxContainer" unique_id=6666666666]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Score: 0 m"
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=7777777777]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "PLAY AGAIN"
+
+[node name="MenuButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=8888888888]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "BACK TO MENU"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
