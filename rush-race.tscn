@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://obehfxihwbdt" path="res://2D/rush-race/rush-race.gd" id="1_yo54r"]
 [ext_resource type="PackedScene" uid="uid://bnfxevlm2ups0" path="res://2D/rush-race/road/road.tscn" id="2_kb63l"]
 [ext_resource type="PackedScene" uid="uid://clrrv1j7ufouw" path="res://2D/rush-race/car/car.tscn" id="3_pa47c"]
+[ext_resource type="Script" uid="uid://b3ackac0gjq4l" path="res://2D/rush-race/finish_line.gd" id="4_kb63l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_finish"]
 size = Vector2(20, 200)
@@ -24,14 +25,18 @@ volume_db = -5.0
 autostart = true
 
 [node name="FinishLine" type="Area2D" parent="." unique_id=991100110]
-position = Vector2(5000, 245)
+position = Vector2(40000, 260)
+script = ExtResource("4_kb63l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinishLine" unique_id=991100111]
 shape = SubResource("RectangleShape2D_finish")
+debug_color = Color(0, 0.6, 0.69803923, 0.5294118)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=437060140]
 
 [node name="Score" type="Label" parent="CanvasLayer" unique_id=1842444887]
-offset_right = 125.0
-offset_bottom = 23.0
+offset_left = 16.0
+offset_top = 13.0
+offset_right = 141.0
+offset_bottom = 36.0
 text = "Score: 0"
