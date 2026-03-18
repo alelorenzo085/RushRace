@@ -47,17 +47,18 @@ func _ready() -> void:
 		add_child(obstacle)
 		obstacle.hit_player.connect(_game_over)
 	)
-
+# It shows score in meters and detect when player loses 
 func _process(_delta):
 	if _game_ended:
 		return
 	distance = int(_car.global_position.x / 10)
 	var remaining = max(0, int((FINISH_LINE_X - _car.global_position.x) / 10))
 	if remaining > 0:
-		_score_label.text = "Score: " + str(distance) + " m  |  Meta: " + str(remaining) + " m"
+		_score_label.text = "Score: " + str(distance) + " m"
 	else:
 		_score_label.text = "Score: " + str(distance) + " m"
 
+# Game over function that shows the score and changes the scene
 func _game_over():
 	if _game_ended:
 		return
@@ -65,6 +66,7 @@ func _game_over():
 	Global.score = distance
 	get_tree().call_deferred("change_scene_to_file", "res://2D/rush-race/menus/GameOver.tscn")
 
+# Win function that shows the score and changes the scene
 func _win():
 	if _game_ended:
 		return
