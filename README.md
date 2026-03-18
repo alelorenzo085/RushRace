@@ -1,5 +1,4 @@
 # 🏁 Project: Rush Race
-## Game Design Document (Short Version)
 
 ---
 
